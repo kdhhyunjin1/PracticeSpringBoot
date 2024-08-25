@@ -7,6 +7,10 @@
     </thead>
     <tbody>
     <tr th:each="question : ${questionList}">
+        <td>
+            <a th:href="@{|/question/detail/${question.id}|}"
+               th:text="${question.subject}"></a> <!-- 일반 문자열과 자바 객체값을 같이 사용할 때 |로 감싸주어야 한다.-->
+        </td>
         <td th:text="${question.subject}"></td>
         <td th:text="${question.createDate}"></td>
     </tr>

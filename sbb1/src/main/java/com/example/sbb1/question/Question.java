@@ -14,10 +14,10 @@ import java.util.List;
 
 public class Question {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(length=200)
+    @Column(length = 200)
     private String subject;
 
     @Column(columnDefinition = "TEXT")
@@ -25,6 +25,6 @@ public class Question {
 
     private LocalDateTime createDate;
 
-    @OneToMany(mappedBy = "question",cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "question", cascade = CascadeType.REMOVE)
     private List<Answer> answerList;
 }
